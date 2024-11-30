@@ -1268,18 +1268,18 @@
 				<panel name="RcPanel"/>
 			</panel>
 		</panel>
-	</screen>
-	<screen name="WizardPictureLangTemplate">
+  </screen>
+  <screen name="WizardPictureLangTemplate">
 		<panel position="top" size="*,50"/>
 		<panel position="top" size="*,50">
 			<ePixmap pixmap="buttons/red.png" position="left" zPosition="0" size="50,34" transparent="1" alphatest="blend"/>
 			<widget name="languagetext" position="fill" font="Regular;34" transparent="1" />
 		</panel>
-	</screen>
-	<!-- it's the same screen... -->
-	<screen name="StartWizard" position="fill" flags="wfNoBorder">
+  </screen>
+  <!-- it's the same screen... -->
+  <screen name="StartWizard" position="fill" flags="wfNoBorder">
 		<panel name="DefaultWizard"/>
-	</screen>
+  </screen>
   <!-- Default wizard -->
   <screen name="DefaultWizard" position="fill" flags="wfNoBorder">
     <panel name="WizardMarginsTemplate"/>
