@@ -1262,29 +1262,29 @@
   </screen>
   <!-- Start Wizard -->
   <screen name="RemoteControlTemplate">
-		<panel position="right" size="154,*">
-			<panel position="top" size="*,50"/>
-			<panel position="top" size="154,500">
-				<panel name="RcPanel"/>
-			</panel>
+	<panel position="right" size="154,*">
+		<panel position="top" size="*,50"/>
+		<panel position="top" size="154,500">
+			<panel name="RcPanel"/>
 		</panel>
+	</panel>
   </screen>
   <screen name="WizardPictureLangTemplate">
-		<panel position="top" size="*,50"/>
-		<panel position="top" size="*,50">
-			<ePixmap pixmap="buttons/red.png" position="left" zPosition="0" size="50,34" transparent="1" alphatest="blend"/>
-			<widget name="languagetext" position="fill" font="Regular;34" transparent="1" />
-		</panel>
+    <panel position="top" size="*,50" />
+    <panel position="top" size="*,50">
+      <ePixmap pixmap="buttons/red.png" position="left" zPosition="0" size="50,34" transparent="1" alphatest="blend" />
+      <widget name="languagetext" position="fill" font="Regular;34" />
+    </panel>
   </screen>
   <!-- it's the same screen... -->
   <screen name="StartWizard" position="fill" flags="wfNoBorder">
-		<panel name="DefaultWizard"/>
+    <panel name="DefaultWizard" />
   </screen>
   <!-- Default wizard -->
   <screen name="DefaultWizard" position="fill" flags="wfNoBorder">
-    <panel name="WizardMarginsTemplate"/>
-    <panel name="WizardPictureLangTemplate"/>
-    <panel name="RemoteControlTemplate"/>
+    <panel name="WizardMarginsTemplate" />
+    <panel name="WizardPictureLangTemplate" />
+    <panel name="RemoteControlTemplate" />
     <panel position="left" size="10,*" />
     <panel position="right" size="10,*" />
     <panel position="fill">
