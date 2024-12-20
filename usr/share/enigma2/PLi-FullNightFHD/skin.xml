@@ -1262,12 +1262,12 @@
   </screen>
   <!-- Start Wizard -->
   <screen name="RemoteControlTemplate">
-	<panel position="right" size="154,*">
-		<panel position="top" size="*,50"/>
-		<panel position="top" size="154,500">
-			<panel name="RcPanel"/>
+		<panel position="right" size="154,*">
+			<panel position="top" size="*,50"/>
+			<panel position="top" size="154,500">
+				<panel name="RcPanel"/>
+			</panel>
 		</panel>
-	</panel>
   </screen>
   <screen name="WizardPictureLangTemplate">
 		<panel position="top" size="*,50"/>
