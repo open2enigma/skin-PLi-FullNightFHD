@@ -1678,7 +1678,7 @@
 				}
 			</convert>
 		</widget>
-	</screen>
+  </screen>
   <!-- PPanel -->
   <screen flags="wfNoBorder" name="ToplevelPPanel" position="fill" title="Toplevel PPanel">
     <panel name="PigTemplate" />
