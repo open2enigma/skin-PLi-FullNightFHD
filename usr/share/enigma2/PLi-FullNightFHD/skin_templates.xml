@@ -356,70 +356,77 @@
     </widget>
     <!--<ePixmap pixmap="icons/icon_update_off.png" position="90,52" size="30,30" zPosition="0" alphatest="blend"/>-->
   </screen>
-<!-- ChannelSelection Template -->
+  <!-- ChannelSelection Template -->
   <screen name="ChannelSelectionTemplate" title="Channel Selection" position="fill" flags="wfNoBorder">
-		<panel name="SelectionTemplate"/>
-		<widget name="list" position="780,108" size="1110,900" itemHeight="45" transparent="1" serviceNumberFont="Regular;34" scrollbarMode="showOnDemand" scrollbarWidth="6" serviceInfoFont="Regular;32" serviceNameFont="Regular;34" serviceItemHeight="45" picServiceEventProgressbar="window/sprogress.png" progressbarHeight="6" progressBarWidth="100" progressPercentWidth="60" colorEventProgressbarBorder="un33333a" fieldMargins="15" nonplayableMargins="15" colorEventProgressbarBorderSelected="darkgrey" colorServiceDescription="#a4c400" foregroundColorEventSelected="#0000ffff" progressbarBorderWidth="0" foregroundColorServiceNotAvail="#656565" backgroundColorMarked="#656565" colorServiceDescriptionFallback="yellowsoft" colorServiceDescriptionSelectedFallback="#0000ffff" colorFallbackItem="#aaaaaa" colorServiceSelectedFallback="yellowsoft" />
-		<widget source="ServiceEvent" render="Label" position="30,528" size="720,30" foregroundColor="transponderinfo" font="Regular;26" valign="center" halign="center" transparent="1" zPosition="1">
-			<convert type="TransponderInfo"/>
-		</widget>
-		<widget source="ServiceEvent" render="Label" position="30,565" size="90,32" transparent="1" foregroundColor="foreground" font="Regular;28" halign="left">
-			<convert type="EventTime">StartTime</convert>
-			<convert type="ClockToText">Format:%H:%M</convert>
-		</widget>
-		<widget source="ServiceEvent" render="Progress" position="118,578" size="540,10" pixmap="window/progress.png" transparent="0" backgroundColor="un33333a" borderWidth="0">
-			<convert type="EventTime">Progress</convert>
-		</widget>
-		<widget source="ServiceEvent" render="Label" position="660,565" size="90,32" transparent="1" foregroundColor="foreground" font="Regular;28" halign="right">
-			<convert type="EventTime">EndTime</convert>
-			<convert type="ClockToText">Format:%H:%M</convert>
-		</widget>
-		<widget source="ServiceEvent" render="Label" position="30,605" size="720,35" transparent="1" foregroundColor="#0000ffff" noWrap="1" font="Regular;32" halign="left">
-			<convert type="EventName">Name</convert>
-		</widget>
-		<widget source="ServiceEvent" render="Label" position="30,645" size="720,213" transparent="1" font="Regular;30" halign="block">
-			<convert type="EventName">FullDescription</convert>
-		</widget>
-		<widget source="ServiceEvent" render="NextEpgInfo" position="30,867" size="720,140" transparent="1" timeColor="foreground" foregroundColor="#a4c400" noLabel="1" noWrap="1" font="Regular;30" NumberOfItems="4"/>
+    <panel name="SelectionTemplate" />
+    <widget name="list" position="780,108" size="1110,900" itemHeight="45" transparent="1" serviceNumberFont="Regular;34" scrollbarMode="showOnDemand" scrollbarWidth="6" serviceInfoFont="Regular;32" serviceNameFont="Regular;34" serviceItemHeight="45" picServiceEventProgressbar="window/sprogress.png" progressbarHeight="6" progressBarWidth="100" progressPercentWidth="60" colorEventProgressbarBorder="un33333a" fieldMargins="15" nonplayableMargins="15" colorEventProgressbarBorderSelected="darkgrey" colorServiceDescription="#a4c400" foregroundColorEventSelected="#0000ffff" progressbarBorderWidth="0" foregroundColorServiceNotAvail="#656565" backgroundColorMarked="#656565" colorServiceDescriptionFallback="yellowsoft" colorServiceDescriptionSelectedFallback="#0000ffff" colorFallbackItem="#aaaaaa" colorServiceSelectedFallback="yellowsoft" />
+    <widget source="ServiceEvent" render="Label" position="30,527" size="720,30" foregroundColor="transponderinfo" font="Regular; 28" valign="center" halign="center" transparent="1" zPosition="1">
+      <convert type="TransponderInfo" />
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="30,557" size="720,30" foregroundColor="orange" font="Regular; 28" valign="center" halign="center" transparent="1" zPosition="1" backgroundColor="black">
+      <convert type="ServiceName">Name</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="30,585" size="90,32" transparent="1" foregroundColor="foreground" font="Regular;28" halign="left">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Progress" position="118,597" size="540,10" pixmap="window/progress.png" transparent="0" backgroundColor="un33333a" borderWidth="0">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="660,585" size="90,32" transparent="1" foregroundColor="foreground" font="Regular;28" halign="right">
+      <convert type="EventTime">EndTime</convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="30,618" size="720,35" transparent="1" foregroundColor="#0000ffff" noWrap="1" font="Regular; 30" halign="left">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="30,655" size="720,213" transparent="1" font="Regular;30" halign="block">
+      <convert type="EventName">FullDescription</convert>
+    </widget>
+    <widget source="ServiceEvent" render="NextEpgInfo" position="30,872" size="720,140" transparent="1" timeColor="foreground" foregroundColor="#a4c400" noLabel="1" noWrap="1" font="Regular;30" NumberOfItems="4" />
   </screen>
-<!-- Remote control templates -->
-	<screen name="RcPanel">
-		<widget name="rc" pixmap="rc.png" position="0,0" zPosition="10" size="154,500" alphatest="blend" backgroundColor="black" transparent="1" />
-		<widget name="arrowdown" conditional="arrowdown" pixmap="arrowdown.png" position="-100,-100" size="37,70" zPosition="11" alphatest="blend"/><!-- belongs to old HelpMenu -->
-		<widget name="arrowdown2" conditional="arrowdown" pixmap="arrowdown.png" position="-100,-100" size="37,70" zPosition="11" alphatest="blend"/><!-- belongs to old HelpMenu -->
-		<widget name="arrowup" pixmap="arrowup.png" conditional="arrowdown" position="-100,-100" size="37,70" zPosition="11" alphatest="blend"/><!-- belongs to old HelpMenu -->
-		<widget name="arrowup2" conditional="arrowdown" pixmap="arrowup.png" position="-100,-100" size="37,70" zPosition="11" alphatest="blend"/><!-- belongs to old HelpMenu -->
-		<widget alphatest="blend" name="indicatorU0" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU1" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU2" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU3" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU4" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU5" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU6" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU7" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU8" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU9" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU10" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU11" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU12" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU13" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU14" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorU15" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL0" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL1" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL2" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL3" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL4" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL5" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL6" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL7" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL8" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL9" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL10" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL11" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL12" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL13" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL14" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-		<widget alphatest="blend" name="indicatorL15" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1"/>
-	</screen>
+  <!-- Remote control templates -->
+  <screen name="RcPanel">
+    <widget name="rc" pixmap="rc.png" position="0,0" zPosition="10" size="154,500" alphatest="blend" backgroundColor="black" transparent="1" />
+    <widget name="arrowdown" conditional="arrowdown" pixmap="arrowdown.png" position="-100,-100" size="37,70" zPosition="11" alphatest="blend" />
+    <!-- belongs to old HelpMenu -->
+    <widget name="arrowdown2" conditional="arrowdown" pixmap="arrowdown.png" position="-100,-100" size="37,70" zPosition="11" alphatest="blend" />
+    <!-- belongs to old HelpMenu -->
+    <widget name="arrowup" pixmap="arrowup.png" conditional="arrowdown" position="-100,-100" size="37,70" zPosition="11" alphatest="blend" />
+    <!-- belongs to old HelpMenu -->
+    <widget name="arrowup2" conditional="arrowdown" pixmap="arrowup.png" position="-100,-100" size="37,70" zPosition="11" alphatest="blend" />
+    <!-- belongs to old HelpMenu -->
+    <widget alphatest="blend" name="indicatorU0" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU1" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU2" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU3" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU4" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU5" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU6" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU7" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU8" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU9" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU10" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU11" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU12" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU13" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU14" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorU15" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL0" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL1" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL2" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL3" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL4" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL5" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL6" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL7" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL8" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL9" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL10" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL11" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL12" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL13" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL14" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+    <widget alphatest="blend" name="indicatorL15" conditional="indicatorU0" pixmap="yellow_circle23x23.png" position="0,0" offset="11,11" size="23,23" zPosition="11" scale="1" />
+  </screen>
 </skin>

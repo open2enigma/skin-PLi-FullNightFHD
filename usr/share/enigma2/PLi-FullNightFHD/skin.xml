@@ -64,11 +64,11 @@
     <color name="black" value="#00000000" />
     <color name="blue" value="#00879ce1" />
     <color name="bluetransparent" value="#08001e4b" />
-    <color name="dark" value="#00242424" />
-    <color name="darkgrey" value="#00555556" />
     <color name="cyan" value="#003798ad" />
     <color name="cyan2" value="#0039b6d1" />
     <color name="cyan3" value="#0084b2bd" />
+    <color name="dark" value="#00242424" />
+    <color name="darkgrey" value="#00555556" />
     <color name="fallback" value="#00b0b0c0" />
     <color name="foreground" value="#00f0f0f0" />
     <color name="green" value="#0056c856" />
@@ -335,12 +335,12 @@
   </screen>
   <!-- Channel,EPG,EventInfo -->
   <screen name="ChannelSelection" position="fill" title="Channel Selection" flags="wfNoBorder">
-      <panel name="ChannelSelectionTemplate"/>
-      <panel name="KeyMenuInfoTemplate"/>
+    <panel name="ChannelSelectionTemplate" />
+    <panel name="KeyMenuInfoTemplate" />
   </screen>
   <!-- Simple channelselection -->
   <screen name="SimpleChannelSelection" position="fill" title="Channel Selection" flags="wfNoBorder">
-    <panel name="ChannelSelectionTemplate"/>
+    <panel name="ChannelSelectionTemplate" />
   </screen>
   <!-- EPG Stuff -->
   <screen name="EPGSelection" position="fill" flags="wfNoBorder">
@@ -1018,7 +1018,7 @@
       </convert>
     </widget>
     <widget source="Service" render="Label" position="600,525" size="150,30" backgroundColor="secondBG" transparent="1" zPosition="1" foregroundColor="secondFG" font="Regular;26" halign="right">
-      <convert type="ServiceOrbitalPosition"/>
+      <convert type="ServiceOrbitalPosition" />
     </widget>
     <widget name="description" position="30,570" size="720,385" transparent="1" font="Regular;30" halign="block" />
   </screen>
@@ -1240,32 +1240,32 @@
   </screen>
   <!-- Start Wizard -->
   <screen name="RemoteControlTemplate">
-		<panel position="right" size="154,*">
-			<panel position="top" size="*,50"/>
-			<panel position="top" size="154,500">
-				<panel name="RcPanel"/>
-			</panel>
-		</panel>
+    <panel position="right" size="154,*">
+      <panel position="top" size="*,50" />
+      <panel position="top" size="154,500">
+        <panel name="RcPanel" />
+      </panel>
+    </panel>
   </screen>
   <screen name="WizardPictureLangTemplate">
-		<panel position="top" size="*,50"/>
-		<panel position="top" size="*,50">
-			<eLabel text="&lt;&lt;&lt;" position="left" zPosition="0" size="75,34" transparent="1" alphatest="blend" font="Regular;34"/>
-			<ePixmap pixmap="buttons/red.png" position="left" zPosition="0" size="34,34" transparent="1" alphatest="blend"/>
-			<panel position="left" size="16,*"/>
-			<widget name="backtext" position="left" size="350,*" font="Regular;34"/>
-			<widget name="languagetext" position="left" size="350,*" font="Regular;34"/>
-			<eLabel text="&gt;&gt;&gt;" position="right" zPosition="0" size="75,34" transparent="1" alphatest="blend" font="Regular;34" halign="right"/>
-			<ePixmap pixmap="buttons/blue.png" position="right" zPosition="0" size="34,34" transparent="1" alphatest="blend"/>
-			<panel position="right" size="16,*"/>
-			<widget name="nexttext" position="right" size="350,*" font="Regular;34" halign="right"/>
-		</panel>
-		<panel position="bottom" size="*,50"/>
-		<panel position="bottom" size="*,50">
-			<ePixmap pixmap="buttons/yellow.png" position="left" zPosition="0" size="34,34" transparent="1" alphatest="blend"/>
-			<panel position="left" size="16,*"/>
-			<widget name="languagetext" position="left" size="350,*" font="Regular;34"/>
-		</panel>
+    <panel position="top" size="*,50" />
+    <panel position="top" size="*,50">
+      <eLabel text="&lt;&lt;&lt;" position="left" zPosition="0" size="75,34" transparent="1" alphatest="blend" font="Regular;34" />
+      <ePixmap pixmap="buttons/red.png" position="left" zPosition="0" size="34,34" transparent="1" alphatest="blend" />
+      <panel position="left" size="16,*" />
+      <widget name="backtext" position="left" size="350,*" font="Regular;34" />
+      <widget name="languagetext" position="left" size="350,*" font="Regular;34" />
+      <eLabel text="&gt;&gt;&gt;" position="right" zPosition="0" size="75,34" transparent="1" alphatest="blend" font="Regular;34" halign="right" />
+      <ePixmap pixmap="buttons/blue.png" position="right" zPosition="0" size="34,34" transparent="1" alphatest="blend" />
+      <panel position="right" size="16,*" />
+      <widget name="nexttext" position="right" size="350,*" font="Regular;34" halign="right" />
+    </panel>
+    <panel position="bottom" size="*,50" />
+    <panel position="bottom" size="*,50">
+      <ePixmap pixmap="buttons/yellow.png" position="left" zPosition="0" size="34,34" transparent="1" alphatest="blend" />
+      <panel position="left" size="16,*" />
+      <widget name="languagetext" position="left" size="350,*" font="Regular;34" />
+    </panel>
   </screen>
   <!-- it's the same screen... -->
   <screen name="StartWizard" position="fill" flags="wfNoBorder">
@@ -1622,16 +1622,18 @@
   </screen>
   <!-- Help -->
   <screen name="HelpMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="PigTemplate"/>
-		<widget name="list" conditional="arrowdown"  position="780,100" size="855,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand"/><!-- belongs to old HelpMenu -->
-		<widget name="long_key" conditional="long_key" position="1590,922" size="375,30" foregroundColor="yellow" font="Regular;24" halign="center"/><!-- belongs to old HelpMenu -->
-		<widget name="longshift_key0" conditional="longshift_key1" position="30,550" size="720,30" foregroundColor="yellow" font="Regular;24" halign="center"/>
-		<widget name="longshift_key1" conditional="longshift_key1" position="30,580" size="720,30" foregroundColor="yellow" font="Regular;24" halign="center"/>
-		<panel position="1659,105" size="231,750">
-			<panel name="RcPanel"/>
-		</panel>
-		<widget source="list" conditional="indicatorU0" render="Listbox" position="780,100" size="855,912" transparent="0" scrollbarMode="showOnDemand">
-			<convert type="TemplatedMultiContent">
+    <panel name="PigTemplate" />
+    <widget name="list" conditional="arrowdown" position="780,100" size="855,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
+    <!-- belongs to old HelpMenu -->
+    <widget name="long_key" conditional="long_key" position="1590,922" size="375,30" foregroundColor="yellow" font="Regular;24" halign="center" />
+    <!-- belongs to old HelpMenu -->
+    <widget name="longshift_key0" conditional="longshift_key1" position="30,550" size="720,30" foregroundColor="yellow" font="Regular;24" halign="center" />
+    <widget name="longshift_key1" conditional="longshift_key1" position="30,580" size="720,30" foregroundColor="yellow" font="Regular;24" halign="center" />
+    <panel position="1659,105" size="231,750">
+      <panel name="RcPanel" />
+    </panel>
+    <widget source="list" conditional="indicatorU0" render="Listbox" position="780,100" size="855,912" transparent="0" scrollbarMode="showOnDemand">
+      <convert type="TemplatedMultiContent">
 					{
 				  "templates": {
 				    # Simple help with no headings ("flat")
@@ -1677,7 +1679,7 @@
 				  "itemHeight": 57
 				}
 			</convert>
-		</widget>
+    </widget>
   </screen>
   <!-- PPanel -->
   <screen flags="wfNoBorder" name="ToplevelPPanel" position="fill" title="Toplevel PPanel">
